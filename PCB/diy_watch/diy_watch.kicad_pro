@@ -392,7 +392,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "binary_watch.kicad_pro",
+    "filename": "diy_watch.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -472,7 +472,7 @@
   },
   "sheets": [
     [
-      "ef0c6a16-8085-475e-9ce5-461de0ca5fd0",
+      "12c7509a-2a16-4dc7-8785-00872e5a9f11",
       ""
     ]
   ],
