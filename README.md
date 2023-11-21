@@ -38,3 +38,13 @@ Should last about a week refreshing every minute using the 40mah battery i think
 [small  3 digit screen 11.938mm long](https://www.aliexpress.com/item/1005005194797350.html)
 
 [Small 6 digit 25mm long](https://www.aliexpress.com/item/32324866141.html) 
+
+## Battteries
+
+[45 mah coin cell](https://uk.rs-online.com/web/p/button-batteries/1834291)
+
+[450mah round lipo](https://www.aliexpress.com/item/4000126677395.html)
+
+## Prototype
+
+[SMD to header](https://www.digikey.co.uk/en/products/detail/adafruit-industries-llc/1207/5022796)
