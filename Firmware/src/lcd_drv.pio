@@ -1,0 +1,38 @@
+; PIO Driver to assist in running a multiplexed LCD display
+; See reference: https://ww1.microchip.com/downloads/en/Appnotes/doc8103.pdf
+; Run a single Common cycle for each 32 but number in the FIFO
+; Support up to 8 Coms and 16 data lines
+
+.program lcd_drv
+
+.define PUBLIC COM_PINS 4
+.define PUBLIC DATA_PINS 10
+
+loop:
+    pull ; Pull latest 32bit word from FIFO to OSR register
+    out pindirs, COM_PINS ; set common lines to input mode for high impedence
+    ; set selected common high
+    ; Set Data lines
+    ; wait
+    ; set common line low
+    ; set data lines inverted
+    jmp loop
+
+% c-sdk {
+static inline void hello_program_init(PIO pio, uint sm, uint offset, uint pin) {
+    pio_sm_config c = hello_program_get_default_config(offset);
+
+    // Map the state machine's OUT pin group to one pin, namely the `pin`
+    // parameter to this function.
+    sm_config_set_out_pins(&c, pin, 1);
+    // Set this pin's GPIO function (connect PIO to the pad)
+    pio_gpio_init(pio, pin);
+    // Set the pin direction to output at the PIO
+    pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, true);
+
+    // Load our configuration, and jump to the start of the program
+    pio_sm_init(pio, sm, offset, &c);
+    // Set the state machine running
+    pio_sm_set_enabled(pio, sm, true);
+}
+%}
