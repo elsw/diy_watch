@@ -37,7 +37,11 @@ Should last about a week refreshing every minute using the 40mah battery i think
 
 [small  3 digit screen 11.938mm long](https://www.aliexpress.com/item/1005005194797350.html)
 
-[Small 6 digit 25mm long](https://www.aliexpress.com/item/32324866141.html) 
+[Small 6 digit 25mm long](https://www.aliexpress.com/item/32324866141.html)
+
+[128x128 LCD](https://www.digikey.co.uk/en/products/detail/sharp-microelectronics/LS013B7DH03/5300387)
+
+[round 128 x 128 LCD](https://uk.farnell.com/midas/mdcog128128b-fptlw/lcd-display-fstn-128-x-128-pixel/dp/3407285)
 
 ## Battteries
 

@@ -25,6 +25,7 @@ sudo apt install git cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essen
 Install the Pico SDK
 
 ```
+cd /home/$USER
 sudo git clone -b master https://github.com/raspberrypi/pico-sdk.git
 cd pico-sdk
 sudo git submodule update --init
@@ -34,7 +35,7 @@ Open VSCode, connect VSCode to the WSL instance then configure the CMake extensi
 ```
 Settings Gear -> Settings -> Extensions -> CMake Tools configuration -> Build Envirnoment
 ```
-Add the Item `PICO_SDK_PATH` and set the Value `/home/$YOURUSER/pico/pico-sdk`
+Add the Item `PICO_SDK_PATH` and set the Value `/home/$YOURUSER/pico-sdk`
 
 Click on the Cmake kit button at the bottom and select the compiler: `arm-none-eabi`
 
@@ -49,3 +50,7 @@ TODO auto mount devices in WSL?
 The debugging setup is configured in the .vscode/launch.json file.
 
 Press F5...
+
+## References
+
+[Driving multiplexed LCD directly](https://ww1.microchip.com/downloads/en/Appnotes/doc8103.pdf)
