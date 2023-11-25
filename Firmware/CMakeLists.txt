@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.22)
 include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 #include(pico_extras_import_optional.cmake)
 
-project(blink_led)
+project(diy_watch)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
@@ -17,10 +17,13 @@ pico_sdk_init()
 
 add_executable(${PROJECT_NAME}
     src/blink_led.c
+    src/multiplex_lcd_drv.c
 )
 
+pico_generate_pio_header(${PROJECT_NAME} ${CMAKE_CURRENT_LIST_DIR}/src/multiplex_lcd.pio OUTPUT_DIR ${CMAKE_CURRENT_LIST_DIR}/generated)
+
 # pull in common dependencies
-target_link_libraries(${PROJECT_NAME} pico_stdlib)
+target_link_libraries(${PROJECT_NAME} pico_stdlib hardware_pio)
 
 # create map/bin/hex file etc.
 pico_add_extra_outputs(${PROJECT_NAME})

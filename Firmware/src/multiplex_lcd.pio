@@ -1,0 +1,37 @@
+; PIO Driver to assist in running a multiplexed LCD display
+; See reference: https://ww1.microchip.com/downloads/en/Appnotes/doc8103.pdf
+; To use: Load up the FIFO with bits : COM_DIR+COM_OUT+DATA_OUT
+; The Code will execute wave pattern with 1 COM_PIN at a time with with the data pin according to the sequence of bits from the FIFO
+
+
+.program multiplex_lcd_drv
+
+.define PUBLIC DIGITS 6
+.define PUBLIC COM_PINS 4
+.define PUBLIC TOTAL_PINS 14
+
+loop:
+    out pindirs, COM_PINS ; fist 4 bits are the COM directions
+    out x, TOTAL_PINS ; next 14 bits are all the GPIO, 4 COM + 10 data lines
+    mov pins, x [31]; set pins then wait for 31 cycles
+    mov pins, !x [31]
+    jmp loop 
+    
+
+;% c-sdk {
+;static inline void lcd_drv_init(PIO pio, uint sm, uint offset, uint pin) {
+;    pio_sm_config c = lcd_drv_get_default_config(offset);
+;
+;    // Set to
+;    sm_config_set_out_pins(&c, pin, TOTAL_PINS);
+;    // Set this pin's GPIO function (connect PIO to the pad)
+;    pio_gpio_init(pio, pin);
+;    // Set the pin direction to output at the PIO
+;    pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, true);
+;
+;    // Load our configuration, and jump to the start of the program
+;    pio_sm_init(pio, sm, offset, &c);
+ ;   // Set the state machine running
+;    pio_sm_set_enabled(pio, sm, true);
+;}
+;%}
