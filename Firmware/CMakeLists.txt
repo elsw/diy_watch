@@ -15,6 +15,14 @@ endif()
 # Initialize the SDK
 pico_sdk_init()
 
+add_compile_options(-Wall
+        -Wno-format          # int != int32_t as far as the compiler is concerned because gcc has int32_t as long int
+        -Wno-unused-function # we have some for the docs that aren't called
+        )
+if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
+    add_compile_options(-Wno-maybe-uninitialized)
+endif()
+
 include_directories(include)
 
 add_executable(${PROJECT_NAME}
@@ -32,11 +40,3 @@ pico_add_extra_outputs(${PROJECT_NAME})
 
 # add url via pico_set_program_url
 #example_auto_set_url(${PROJECT_NAME})
-
-add_compile_options(-Wall
-        -Wno-format          # int != int32_t as far as the compiler is concerned because gcc has int32_t as long int
-        -Wno-unused-function # we have some for the docs that aren't called
-        )
-if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
-    add_compile_options(-Wno-maybe-uninitialized)
-endif()

@@ -7,7 +7,26 @@ This is the firmware for the DIY watch to run the raspberry pi RP2040 microcontr
 [RP2040 Datasheet](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf)
 [Raspberry Pi Pico C/C++ SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf)
 
-## Build Setup
+
+# Windows Setup
+
+Windows support seems better than the Ubunutu support for pic development
+
+Download and install the [Windows Pico Installer](https://www.raspberrypi.com/news/raspberry-pi-pico-windows-installer/)
+
+Open the `Pico - Visual Studio Code` shortcut from start menu, build the cmake and select the Kit `arm-none-eabi` (you may need to scan for kits first)
+
+## Debugging
+
+Grab a pre-compiled picoprobe binary from [here](https://github.com/Fabien-Chouteau/picoprobe-pcb#install-the-picoprobe-software)
+
+Hold down BOOTSEL, connect your pico and drag and drop the picoprobe.
+
+The the USB drivers you may need to download [zadig](https://zadig.akeo.ie/)
+
+Select `Picoprobe (interface 2)` and set the USB driver to `WinUSB`
+ 
+# WSL Ubuntu Build Setup (still not able to debug on this D:)
 
 I am using VSCode to program,build and test the RP2040 firmware on WSL, based from [this](https://paulbupejr.com/raspberry-pi-pico-windows-development/) tutorial
 
