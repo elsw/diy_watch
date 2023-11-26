@@ -11,11 +11,17 @@
 .define PUBLIC TOTAL_PINS 14
 
 loop:
+    pull
     out pindirs, COM_PINS ; fist 4 bits are the COM directions
     out x, TOTAL_PINS ; next 14 bits are all the GPIO, 4 COM + 10 data lines
     mov pins, x [31]; set pins then wait for 31 cycles
     mov pins, !x [31]
-    jmp loop 
+    ; Check if FIFO is empty
+    mov y , !STATUS
+    jmp !y  setirq  
+    jmp loop
+setirq:
+    irq 0                  ; when fifo is empty, fire an irq 
     
 
 ;% c-sdk {

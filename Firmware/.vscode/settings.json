@@ -22,5 +22,6 @@
         "dreq.h": "c",
         "pio.h": "c",
         "multiplex_lcd.pio.h": "c"
-    }
+    },
+    "cortex-debug.openocdPath": "/home/${env:USER}/openocd/src/openocd"
 }

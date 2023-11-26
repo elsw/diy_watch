@@ -15,9 +15,11 @@ endif()
 # Initialize the SDK
 pico_sdk_init()
 
+include_directories(include)
+
 add_executable(${PROJECT_NAME}
-    src/blink_led.c
-    src/multiplex_lcd_drv.c
+    src/diy_watch.cpp
+    src/multiplex_lcd_drv.cpp
 )
 
 pico_generate_pio_header(${PROJECT_NAME} ${CMAKE_CURRENT_LIST_DIR}/src/multiplex_lcd.pio OUTPUT_DIR ${CMAKE_CURRENT_LIST_DIR}/generated)

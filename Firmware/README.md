@@ -48,7 +48,49 @@ You can now build the program. Hold down the BOOLSEL button and copy the file `b
 
 ## Debugging the Code
 
-Requires a SWD interface connected to your computer
+### Install openOCD for pico
+
+```
+sudo apt install automake autoconf build-essential texinfo libtool libftdi-dev libusb-1.0-0-dev pkg-config
+git clone https://github.com/raspberrypi/openocd.git --branch rp2040-v0.12.0 --depth=1 --no-single-branch
+cd openocd
+./bootstrap
+./configure
+make -j4
+```
+
+### Flash picoprobe onto a Pico
+
+```
+https://github.com/raspberrypi/picoprobe.git
+cd picoprobe
+mkdir build
+cd build
+cmake ..
+make
+```
+
+Hold BOOLSEL, connect your pico that will become the debugger and copy across `picoprobe.elf`
+
+### Add usb support to WSL
+
+Install the .msi installer for [usbipd](https://github.com/dorssel/usbipd-win/releases) for windows 
+
+Inside your WSL instance, install teh USBIP tools
+```
+sudo apt install linux-tools-generic hwdata
+sudo update-alternatives --install /usr/local/bin/usbip usbip /usr/lib/linux-tools/*-generic/usbip 20
+```
+
+Open up command line with admin priveliges in windoes and input
+```
+usbipd wsl list
+```
+attach the ` USB Mass Storage Device, RP2 Boot` with:
+```
+usbipd wsl attach --busid <busid>
+```
+in WSL `lsusb` should now show `Raspberry Pi RP2 Boot`
 
 TODO auto mount devices in WSL?
 
