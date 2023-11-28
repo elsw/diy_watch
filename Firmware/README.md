@@ -45,7 +45,7 @@ Open up a terminal inside your WSL instance, and install dependancies
 ```
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt install git cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
+sudo apt install git cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential gdb-multiarch
 ```
 
 Install the Pico SDK
@@ -159,7 +159,10 @@ Does it need in the launch?
 
 The debugging setup is configured in the .vscode/launch.json file.
 
-GDB errors...
+Hitting
+```
+OpenOCD: GDB Server Quit Unexpectedly...
+```
 
 ## References
 

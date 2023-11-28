@@ -24,6 +24,9 @@
                 "break main",
                 "continue"
             ],
+            "openOCDLaunchCommands": [
+                "adapter speed 5000"
+            ],
             "showDevDebugOutput": "raw"
         }
     ]
