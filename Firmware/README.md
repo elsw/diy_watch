@@ -8,7 +8,7 @@ This is the firmware for the DIY watch to run the raspberry pi RP2040 microcontr
 [Raspberry Pi Pico C/C++ SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf)
 
 
-# Windows Setup
+# Windows Setup (debugging no WORK!)
 
 Windows support seems better than the Ubunutu support for pic development
 
@@ -18,15 +18,17 @@ Open the `Pico - Visual Studio Code` shortcut from start menu, build the cmake a
 
 ## Debugging
 
-Grab a pre-compiled picoprobe binary from [here](https://github.com/Fabien-Chouteau/picoprobe-pcb#install-the-picoprobe-software)
+Grab a pre-compiled picoprobe binary.. TODO find source.
 
 Hold down BOOTSEL, connect your pico and drag and drop the picoprobe.
+
+If you have the right version it should appear as a CMIS_DAP device
 
 The the USB drivers you may need to download [zadig](https://zadig.akeo.ie/)
 
 Select `Picoprobe (interface 2)` and set the USB driver to `WinUSB`
  
-# WSL Ubuntu Build Setup (still not able to debug on this D:)
+# WSL Ubuntu Build Setup
 
 I am using VSCode to program,build and test the RP2040 firmware on WSL, based from [this](https://paulbupejr.com/raspberry-pi-pico-windows-development/) tutorial
 
@@ -55,11 +57,17 @@ cd pico-sdk
 sudo git submodule update --init
 ```
 
-Open VSCode, connect VSCode to the WSL instance then configure the CMake extension:
+Open VSCode and connect VSCode to the WSL instance then configure the CMake extension:
 ```
 Settings Gear -> Settings -> Extensions -> CMake Tools configuration -> Build Envirnoment
 ```
 Add the Item `PICO_SDK_PATH` and set the Value `/home/$YOURUSER/pico-sdk`
+
+You may also need to add to your `~/.bashrc`
+```
+export PICO_SDK_PATH=/home/$YOURUSER/pico-sdk
+```
+unclear on this
 
 Click on the Cmake kit button at the bottom and select the compiler: `arm-none-eabi`
 
@@ -74,15 +82,17 @@ sudo apt install automake autoconf build-essential texinfo libtool libftdi-dev l
 git clone https://github.com/raspberrypi/openocd.git --branch rp2040-v0.12.0 --depth=1 --no-single-branch
 cd openocd
 ./bootstrap
-./configure
+./configure --enable-picoprobe
 make -j4
+sudo make install
 ```
 
 ### Flash picoprobe onto a Pico
 
 ```
-https://github.com/raspberrypi/picoprobe.git
+git clone https://github.com/raspberrypi/picoprobe.git
 cd picoprobe
+git submodule update --init
 mkdir build
 cd build
 cmake ..
@@ -95,7 +105,7 @@ Hold BOOLSEL, connect your pico that will become the debugger and copy across `p
 
 Install the .msi installer for [usbipd](https://github.com/dorssel/usbipd-win/releases) for windows 
 
-Inside your WSL instance, install teh USBIP tools
+Inside your WSL instance, install the USBIP tools
 ```
 sudo apt install linux-tools-generic hwdata
 sudo update-alternatives --install /usr/local/bin/usbip usbip /usr/lib/linux-tools/*-generic/usbip 20
@@ -113,9 +123,43 @@ in WSL `lsusb` should now show `Raspberry Pi RP2 Boot`
 
 TODO auto mount devices in WSL?
 
+### Test out your openocd build
+
+Checkout pico examples:
+```
+git clone https://github.com/raspberrypi/pico-examples
+mkdir build
+cd build
+cmake ..
+make
+```
+This try use your custom openocd build to upload a program
+```
+cd /home/steve/openocd
+openocd -f interface/cmsis-dap.cfg -f target/rp2040.cfg -c "program /home/steve/pico-examples/build/blink/blink.elf verify reset exit"
+```
+
+### Debugging with VSCode
+
+Is this required?
+```
+sudo apt update
+sudo apt install binutils-multiarch
+cd /usr/bin
+ln -s /usr/bin/objdump objdump-multiarch
+ln -s /usr/bin/nm nm-multiarch 
+```
+
+Does it need in the launch?
+```
+"openOCDLaunchCommands": [
+                "adapter speed 5000"
+            ],
+```
+
 The debugging setup is configured in the .vscode/launch.json file.
 
-Press F5...
+GDB errors...
 
 ## References
 
