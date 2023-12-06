@@ -6,6 +6,7 @@ This is the firmware for the DIY watch to run the raspberry pi RP2040 microcontr
 
 [RP2040 Datasheet](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf)
 [Raspberry Pi Pico C/C++ SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf)
+[Driving multiplexed LCD directly](https://ww1.microchip.com/downloads/en/Appnotes/doc8103.pdf)
 
 
 # Windows Setup (debugging no WORK!)
@@ -45,7 +46,7 @@ Open up a terminal inside your WSL instance, and install dependancies
 ```
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt install git cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential gdb-multiarch
+sudo apt install git cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
 ```
 
 Install the Pico SDK
@@ -165,5 +166,3 @@ OpenOCD: GDB Server Quit Unexpectedly...
 ```
 
 ## References
-
-[Driving multiplexed LCD directly](https://ww1.microchip.com/downloads/en/Appnotes/doc8103.pdf)

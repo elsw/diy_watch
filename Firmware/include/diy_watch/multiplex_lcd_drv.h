@@ -10,7 +10,7 @@ public:
     * offset - memory offset of the allocated memory, get allocation using pio_add_program
     * pin - base pin to initialise, Will initiale this pin plus the next TOTAL_PINS defined in the .pio file
     */
-    MultiplexLCDDriver(PIO pio, uint sm, uint offset, uint pin_base);
+    MultiplexLCDDriver(PIO pio, uint sm, uint offset, uint pin_base,uint target_cycle_frequency);
 
     /*
     * Given sequence of 6 digits calculate buffer stream to send to .pio LCD driver

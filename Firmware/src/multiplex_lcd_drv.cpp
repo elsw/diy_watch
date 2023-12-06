@@ -1,12 +1,20 @@
 #include "diy_watch/multiplex_lcd_drv.h"
 #include "pico.h"
 #include "hardware/pio.h"
+#include "hardware/clocks.h"
 
-MultiplexLCDDriver::MultiplexLCDDriver(PIO pio, uint sm, uint offset, uint pin_base):
+MultiplexLCDDriver::MultiplexLCDDriver(PIO pio, uint sm, uint offset, uint pin_base,uint target_cycle_frequency):
   pio(pio),
   sm(sm)
 {
     pio_sm_config c = multiplex_lcd_drv_program_get_default_config(offset);
+
+    sm_config_set_out_pins(&c,pin_base,multiplex_lcd_drv_TOTAL_PINS);
+
+    //Init all GPIO pins
+    for(uint i=pin_base; i< pin_base + multiplex_lcd_drv_TOTAL_PINS; i++) {
+        pio_gpio_init(pio, i);
+    }
 
     bool shift_right = true;
     bool autopull = false;
@@ -15,23 +23,25 @@ MultiplexLCDDriver::MultiplexLCDDriver(PIO pio, uint sm, uint offset, uint pin_b
 
     sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
 
-    //Init all GPIO pins
-    for(uint i=pin_base; i< pin_base + multiplex_lcd_drv_TOTAL_PINS; i++) {
-        pio_gpio_init(pio, i);
-    }
-
     // Set COM pins default input, so they default to 1/2 v+
-    pio_sm_set_consecutive_pindirs(pio, sm, pin_base, multiplex_lcd_drv_COM_PINS, false);
+    pio_sm_set_consecutive_pindirs(pio, sm, pin_base, multiplex_lcd_drv_COM_PINS,true);// false);
     // Set Data pins out output
     pio_sm_set_consecutive_pindirs(pio, sm, pin_base + multiplex_lcd_drv_COM_PINS, multiplex_lcd_drv_TOTAL_PINS - multiplex_lcd_drv_COM_PINS, true);
+
+    // when TX fifo is less than 0(n), y will become all-ones, otherwise all-zeroes
+    sm_config_set_mov_status (&c, STATUS_TX_LESSTHAN , 1 ) ;
+
+    int cycles_per_loop = (multiplex_lcd_drv_WAIT_CYCLES * 2) + 6;
+    float div = clock_get_hz(clk_sys) / (target_cycle_frequency * cycles_per_loop);
+    sm_config_set_clkdiv(&c, div);
 
     // Load our configuration, and jump to the start of the program
     pio_sm_init(pio, sm, offset, &c);
     // Set the state machine running
     pio_sm_set_enabled(pio, sm, true);
 
-    // when TX fifo is less than 0(n), y will become all-ones, otherwise all-zeroes
-    sm_config_set_mov_status (&c, STATUS_TX_LESSTHAN , 1 ) ;
+
+
 }
 
 
