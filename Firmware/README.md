@@ -29,7 +29,7 @@ The the USB drivers you may need to download [zadig](https://zadig.akeo.ie/)
 
 Select `Picoprobe (interface 2)` and set the USB driver to `WinUSB`
  
-# WSL Ubuntu Build Setup
+# WSL Ubuntu Build Setup (Debug USB support not working, may be OK for native Ubuntu)
 
 I am using VSCode to program,build and test the RP2040 firmware on WSL, based from [this](https://paulbupejr.com/raspberry-pi-pico-windows-development/) tutorial
 
@@ -162,7 +162,7 @@ The debugging setup is configured in the .vscode/launch.json file.
 
 Hitting
 ```
-OpenOCD: GDB Server Quit Unexpectedly...
+OpenOCD: GDB Server Quit Unexpectedly, cannot find device, WSL limitation?
 ```
 
 ## References
