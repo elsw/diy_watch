@@ -1,8 +1,10 @@
 #include "multiplex_lcd.pio.h"
+#include <memory>
 
 class MultiplexLCDDriver
 {
 public:
+    using Ptr = std::shared_ptr<MultiplexLCDDriver>;
 
     /*
     * PIO - PIO instance pio0 or pio1
@@ -32,7 +34,7 @@ private:
     // COM3 = C E
     // COM4 = P D
     //Shift up 2 access next digit, see LCD_Panel.PNG for full pinout
-    static constexpr uint8_t digit_lookup[10][multiplex_lcd_drv_COM_PINS] = {
+    static constexpr uint8_t digit_lookup[10][multiplex_lcd_drv_COMMON_PINS] = {
                             {3,3,3,0}, //0
                             {1,2,0,0}, //1
                             {3,1,2,2}, //2
@@ -48,7 +50,7 @@ private:
 
 
     //One set of data pins per 32 bit number
-    uint32_t lcd_out[multiplex_lcd_drv_COM_PINS];
+    uint32_t lcd_out[multiplex_lcd_drv_COMMON_PINS];
     PIO pio;
     uint sm;
 };

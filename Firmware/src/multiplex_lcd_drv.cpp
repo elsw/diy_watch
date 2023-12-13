@@ -2,6 +2,10 @@
 #include "pico.h"
 #include "hardware/pio.h"
 #include "hardware/clocks.h"
+#include <cmath>
+
+//all 1s for bits equal to number of pins
+constexpr uint32_t DATA_PINS_OUTPUT = (static_cast<int>(std::pow(2,multiplex_lcd_drv_DATA_PINS)) - 1) << (multiplex_lcd_drv_TOTAL_PINS + multiplex_lcd_drv_COMMON_PINS);
 
 MultiplexLCDDriver::MultiplexLCDDriver(PIO pio, uint sm, uint offset, uint pin_base,uint target_cycle_frequency):
   pio(pio),
@@ -23,10 +27,8 @@ MultiplexLCDDriver::MultiplexLCDDriver(PIO pio, uint sm, uint offset, uint pin_b
 
     sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
 
-    // Set COM pins default input, so they default to 1/2 v+
-    pio_sm_set_consecutive_pindirs(pio, sm, pin_base, multiplex_lcd_drv_COM_PINS,true);// false);
-    // Set Data pins out output
-    pio_sm_set_consecutive_pindirs(pio, sm, pin_base + multiplex_lcd_drv_COM_PINS, multiplex_lcd_drv_TOTAL_PINS - multiplex_lcd_drv_COM_PINS, true);
+    // Set all pins as output
+    pio_sm_set_consecutive_pindirs(pio, sm, pin_base, multiplex_lcd_drv_TOTAL_PINS, true);
 
     // when TX fifo is less than 0(n), y will become all-ones, otherwise all-zeroes
     sm_config_set_mov_status (&c, STATUS_TX_LESSTHAN , 1 ) ;
@@ -39,41 +41,40 @@ MultiplexLCDDriver::MultiplexLCDDriver(PIO pio, uint sm, uint offset, uint pin_b
     pio_sm_init(pio, sm, offset, &c);
     // Set the state machine running
     pio_sm_set_enabled(pio, sm, true);
-
-
-
 }
 
 
 void MultiplexLCDDriver::UpdateOutput(uint8_t * buf)
 {
     //Clear Buffer and re-setup COM sequence
-    for(unsigned i = 0 ; i < multiplex_lcd_drv_COM_PINS ; i++)
+    for(unsigned i = 0 ; i < multiplex_lcd_drv_COMMON_PINS ; i++)
     {
-        //For 4 coms and 10 data lines, first 4 bits is pin direction, next 4 is COM state, next 10 is data state
-        lcd_out[i] = (1 << i) + (1 << (multiplex_lcd_drv_COM_PINS + i));
+        //First 14 bits is data, next 14 is pin directions
+        lcd_out[i] = DATA_PINS_OUTPUT;
+        lcd_out[i] |= (1 << i) + (1 << (multiplex_lcd_drv_TOTAL_PINS + i));
     }
     //Now loop through digits, adding the data to lcd_out buffer
-    for(unsigned i = 0 ; i < multiplex_lcd_drv_DIGITS ; i++)
+    /*for(unsigned i = 0 ; i < multiplex_lcd_drv_DIGITS ; i++)
     {
         //Get data that will create the chosen digit
         uint8_t digit[multiplex_lcd_drv_COM_PINS]; 
         for(unsigned j = 0 ; j < multiplex_lcd_drv_COM_PINS ; j++)
         {
-           digit[j] = digit_lookup[buf[i]][j];
+          digit[j] = digit_lookup[buf[i]][j];
         }
-        uint8_t shift_amount = (multiplex_lcd_drv_COM_PINS * 2) + (i * 2); //shift up the data 2 bits per digit plus the width of data the common lines use
+        uint8_t shift_amount = (multiplex_lcd_drv_COM_PINS) + (i * 2); //shift up the data 2 bits per digit plus the width of data the common lines use
         //Add data to each COM line
         for(unsigned j = 0 ; j < multiplex_lcd_drv_COM_PINS ; j++)
         {
-            lcd_out[j] &= (digit[j] << shift_amount);
+            lcd_out[j] |= (digit[j] << shift_amount);
         }
-    }
+    }*/
+    return;
 }
 
 void MultiplexLCDDriver::FIFOEmpty()
 {
-  for(unsigned i = 0 ; i < multiplex_lcd_drv_COM_PINS ; i++)
+  for(unsigned i = 0 ; i < multiplex_lcd_drv_COMMON_PINS ; i++)
   {
     pio_sm_put(pio,sm,lcd_out[i]);
   }

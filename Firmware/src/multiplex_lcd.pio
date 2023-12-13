@@ -7,25 +7,26 @@
 .program multiplex_lcd_drv
 
 ; LCD Params
-.define PUBLIC COM_PINS 4
-.define PUBLIC TOTAL_PINS 14
-.define PUBLIC DIGITS 4
+.define PUBLIC DATA_PINS 10
+.define PUBLIC COMMON_PINS 4
+.define PUBLIC TOTAL_PINS DATA_PINS + COMMON_PINS
 .define PUBLIC WAIT_CYCLES 31 
 
 loop:
     pull
+    set pindirs, 1
     out x, TOTAL_PINS ; first 14 bits are all the GPIO states, 4 COM + 10 data lines
-    mov pins, x       ; Set output state of all COMS + data
-    out pindirs, COM_PINS [WAIT_CYCLES]; next 4 bits are the COM directions, then wait
+    mov pins, x      ; Set output state of all COMS + data
+    out pindirs, TOTAL_PINS [WAIT_CYCLES];   ;next 14 bits are COM directions, 1 = out, 0 = in
     mov pins, !x [WAIT_CYCLES]
-    out pindirs, COM_PINS ; last 4 bytes should be all zero to reset the COMs to inputs
+    ;out pindirs, COM_PINS ; last 4 bytes should be all zero to reset the COMs to inputs
     ; Check if FIFO is empty
-    ;mov y , !STATUS
-    ;jmp !y  setirq   use !OSRE ???
+    mov y , !STATUS
+    jmp !y  setirq
     jmp loop
-;setirq:
-    ;irq 0                  ; when fifo is empty, fire an irq
-    ;jmp loop
+setirq:
+    irq set 0                  ; when fifo is empty, fire an irq
+    jmp loop
     
 
 ;% c-sdk {
