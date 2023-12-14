@@ -51,7 +51,7 @@ void MultiplexLCDDriver::UpdateOutput(uint8_t * buf)
     //Clear Buffer and re-setup COM sequence
     for(unsigned i = 0 ; i < multiplex_lcd_drv_COMMON_PINS ; i++)
     {
-        //First 14 bits is data, next 14 is pin directions. Start with all data pin directions as output
+        //First 16 bits is data, next 16 is pin directions. Start with all data pin directions as output
         lcd_out[i] = DATA_PINS_HIGH;
         // Add common pins data (0 for active data pin)
         lcd_out[i] |= (COMMON_PINS_HIGH ^ (1 << i));
@@ -59,21 +59,21 @@ void MultiplexLCDDriver::UpdateOutput(uint8_t * buf)
         lcd_out[i] |= (1 << (multiplex_lcd_drv_TOTAL_PINS + i));
     }
     //Now loop through digits, adding the data to lcd_out buffer
-    /*for(unsigned i = 0 ; i < multiplex_lcd_drv_DIGITS ; i++)
+    for(unsigned i = 0 ; i < multiplex_lcd_drv_DIGITS ; i++)
     {
         //Get data that will create the chosen digit
-        uint8_t digit[multiplex_lcd_drv_COM_PINS]; 
-        for(unsigned j = 0 ; j < multiplex_lcd_drv_COM_PINS ; j++)
+        uint8_t digit[multiplex_lcd_drv_COMMON_PINS]; 
+        for(unsigned j = 0 ; j < multiplex_lcd_drv_COMMON_PINS ; j++)
         {
           digit[j] = digit_lookup[buf[i]][j];
         }
-        uint8_t shift_amount = (multiplex_lcd_drv_COM_PINS) + (i * 2); //shift up the data 2 bits per digit plus the width of data the common lines use
+        uint8_t shift_amount = (multiplex_lcd_drv_COMMON_PINS) + (i * 2); //shift up the data 2 bits per digit plus the width of data the common lines use
         //Add data to each COM line
-        for(unsigned j = 0 ; j < multiplex_lcd_drv_COM_PINS ; j++)
+        for(unsigned j = 0 ; j < multiplex_lcd_drv_COMMON_PINS ; j++)
         {
             lcd_out[j] |= (digit[j] << shift_amount);
         }
-    }*/
+    }
     return;
 }
 

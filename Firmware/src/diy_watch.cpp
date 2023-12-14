@@ -11,6 +11,7 @@ const uint LCD_SM = 1; //LCD State Machine
 const uint TARGET_LCD_CYCLE_HZ = 250; //4ms per cycle, 4 cycles per refresh
 
 MultiplexLCDDriver::Ptr lcd;
+unsigned count = 0;
 
 void pio_irh() 
 {
@@ -61,7 +62,7 @@ int main()
     uint8_t digits[6];
     for(unsigned i = 0 ; i < 6 ; i++)
     {
-      digits[i] = i;
+      digits[i] = count;
     }
     lcd->UpdateOutput(digits);
 
@@ -72,5 +73,14 @@ int main()
     {
         sleep_ms(1000);
         gpio_callback(RTC_1HZ_PIN,0);
+        count++;
+        if(count > 9)
+          count = 0;
+        uint8_t digits[6];
+        for(unsigned i = 0 ; i < 6 ; i++)
+        {
+          digits[i] = count;
+        }
+        lcd->UpdateOutput(digits);
     }
 }
