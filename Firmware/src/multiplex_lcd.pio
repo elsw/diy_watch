@@ -16,9 +16,9 @@ loop:
     pull
     set pindirs, 1
     out x, TOTAL_PINS ; first 14 bits are all the GPIO states, 4 COM + 10 data lines
-    mov pins, x      ; Set output state of all COMS + data
+    mov pins, !x      ; Set output state of all COMS + data
     out pindirs, TOTAL_PINS [WAIT_CYCLES];   ;next 14 bits are COM directions, 1 = out, 0 = in
-    mov pins, !x [WAIT_CYCLES]
+    mov pins, x [WAIT_CYCLES - 7] ; 7 less wait cycles due to compensate for time to get to next loop
     ;out pindirs, COM_PINS ; last 4 bytes should be all zero to reset the COMs to inputs
     ; Check if FIFO is empty
     mov y , !STATUS

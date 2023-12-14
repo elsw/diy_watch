@@ -4,8 +4,10 @@
 #include "hardware/clocks.h"
 #include <cmath>
 
-//all 1s for bits equal to number of pins
-constexpr uint32_t DATA_PINS_OUTPUT = (static_cast<int>(std::pow(2,multiplex_lcd_drv_DATA_PINS)) - 1) << (multiplex_lcd_drv_TOTAL_PINS + multiplex_lcd_drv_COMMON_PINS);
+//all 1s for direction for bits equal to number of data pins
+constexpr uint32_t DATA_PINS_HIGH = (static_cast<int>(std::pow(2,multiplex_lcd_drv_DATA_PINS)) - 1) << (multiplex_lcd_drv_TOTAL_PINS + multiplex_lcd_drv_COMMON_PINS);
+//all 1s for data for bits equal to number of common pins
+constexpr uint32_t COMMON_PINS_HIGH = (static_cast<int>(std::pow(2,multiplex_lcd_drv_COMMON_PINS)) - 1);
 
 MultiplexLCDDriver::MultiplexLCDDriver(PIO pio, uint sm, uint offset, uint pin_base,uint target_cycle_frequency):
   pio(pio),
@@ -49,9 +51,12 @@ void MultiplexLCDDriver::UpdateOutput(uint8_t * buf)
     //Clear Buffer and re-setup COM sequence
     for(unsigned i = 0 ; i < multiplex_lcd_drv_COMMON_PINS ; i++)
     {
-        //First 14 bits is data, next 14 is pin directions
-        lcd_out[i] = DATA_PINS_OUTPUT;
-        lcd_out[i] |= (1 << i) + (1 << (multiplex_lcd_drv_TOTAL_PINS + i));
+        //First 14 bits is data, next 14 is pin directions. Start with all data pin directions as output
+        lcd_out[i] = DATA_PINS_HIGH;
+        // Add common pins data (0 for active data pin)
+        lcd_out[i] |= (COMMON_PINS_HIGH ^ (1 << i));
+        //common direction (1 for active set output)
+        lcd_out[i] |= (1 << (multiplex_lcd_drv_TOTAL_PINS + i));
     }
     //Now loop through digits, adding the data to lcd_out buffer
     /*for(unsigned i = 0 ; i < multiplex_lcd_drv_DIGITS ; i++)
