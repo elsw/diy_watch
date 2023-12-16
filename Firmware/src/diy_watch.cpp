@@ -1,7 +1,9 @@
 #include "pico/stdlib.h"
 #include "hardware/pio.h"
+#include "hardware/i2c.h"
 #include "multiplex_lcd.pio.h"
 #include "diy_watch/multiplex_lcd_drv.h"
+#include "diy_watch/RTClib.h"
 
 const uint LED_PIN = PICO_DEFAULT_LED_PIN;
 const uint RTC_1HZ_PIN = 18;
@@ -34,6 +36,15 @@ void gpio_callback(uint gpio, uint32_t events)
     {
         //Increment time
         gpio_put(LED_PIN,!gpio_get(LED_PIN));
+        count++;
+        if(count > 9)
+          count = 0;
+        uint8_t digits[6];
+        for(unsigned i = 0 ; i < 6 ; i++)
+        {
+          digits[i] = count;
+        }
+        lcd->UpdateOutput(digits);
     }
 }
 
@@ -51,7 +62,7 @@ int main()
     //Initialise driver
     lcd = std::make_shared<MultiplexLCDDriver>(pio,LCD_SM,offset,LCD_BASE_PIN,TARGET_LCD_CYCLE_HZ);
 
-    //gpio_set_irq_enabled_with_callback(RTC_1HZ_PIN, GPIO_IRQ_EDGE_RISE, true, &gpio_callback);
+    gpio_set_irq_enabled_with_callback(RTC_1HZ_PIN, GPIO_IRQ_EDGE_RISE, true, &gpio_callback);
 
     // Enable IRQ0 on PIO0
     irq_set_exclusive_handler(PIO0_IRQ_0, pio_irh);
@@ -66,21 +77,23 @@ int main()
     }
     lcd->UpdateOutput(digits);
 
+    //Initialize I2C port at 400 kHz
+    const uint sda_pin = 16;
+    const uint scl_pin = 17;
+    i2c_inst_t *i2c = i2c0;
+    gpio_set_function(sda_pin, GPIO_FUNC_I2C);
+    gpio_set_function(scl_pin, GPIO_FUNC_I2C);
+    i2c_init(i2c, 400 * 1000);
+
+    //Enable IRQ from LCD PIO code
     irq_set_enabled(PIO0_IRQ_0, true);
     pio_sm_put(pio0,LCD_SM,0x00000000);
 
+    RTC_DS3231 rtc;
+    rtc.begin(i2c);
+    rtc.writeSqwPinMode(Ds3231SqwPinMode::DS3231_SquareWave1Hz);
+
     while (true) 
     {
-        sleep_ms(1000);
-        gpio_callback(RTC_1HZ_PIN,0);
-        count++;
-        if(count > 9)
-          count = 0;
-        uint8_t digits[6];
-        for(unsigned i = 0 ; i < 6 ; i++)
-        {
-          digits[i] = count;
-        }
-        lcd->UpdateOutput(digits);
     }
 }

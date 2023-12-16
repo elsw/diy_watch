@@ -28,15 +28,21 @@ include_directories(include)
 add_executable(${PROJECT_NAME}
     src/diy_watch.cpp
     src/multiplex_lcd_drv.cpp
+    src/RTClib.cpp
+    src/RTC_DS3231.cpp
 )
 
 pico_generate_pio_header(${PROJECT_NAME} ${CMAKE_CURRENT_LIST_DIR}/src/multiplex_lcd.pio OUTPUT_DIR ${CMAKE_CURRENT_LIST_DIR}/generated)
 
 # pull in common dependencies
-target_link_libraries(${PROJECT_NAME} pico_stdlib hardware_pio)
+target_link_libraries(${PROJECT_NAME} pico_stdlib hardware_pio hardware_i2c)
 
 # create map/bin/hex file etc.
 pico_add_extra_outputs(${PROJECT_NAME})
 
 # add url via pico_set_program_url
 #example_auto_set_url(${PROJECT_NAME})
+
+# Enable usb output, disable uart output TODO
+#pico_enable_stdio_usb(${PROJECT_NAME} 1)
+#pico_enable_stdio_uart(${PROJECT_NAME} 0)
