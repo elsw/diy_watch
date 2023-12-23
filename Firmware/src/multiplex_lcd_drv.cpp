@@ -71,9 +71,13 @@ void MultiplexLCDDriver::UpdateOutput(uint8_t * buf)
         //Add data to each COM line
         for(unsigned j = 0 ; j < multiplex_lcd_drv_COMMON_PINS ; j++)
         {
-            lcd_out[j] |= (digit[j] << shift_amount);
+          lcd_out[j] |= (digit[j] << shift_amount);
         }
     }
+    //Add dot to COM4 for 2nd and 4th digit
+    lcd_out[3] |= 1 << (multiplex_lcd_drv_COMMON_PINS + (2 * 2));
+    lcd_out[3] |= 1 << (multiplex_lcd_drv_COMMON_PINS + (4 * 2));
+
     return;
 }
 
