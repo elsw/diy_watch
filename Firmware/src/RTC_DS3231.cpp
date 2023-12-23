@@ -1,18 +1,28 @@
 #include "diy_watch/RTClib.h"
+#include "hardware/i2c.h"
+#include "pico/stdlib.h"
 
-#define DS3231_ADDRESS 0x68   ///< I2C address for DS3231
-#define DS3231_TIME 0x00      ///< Time register
-#define DS3231_ALARM1 0x07    ///< Alarm 1 register
-#define DS3231_ALARM2 0x0B    ///< Alarm 2 register
-#define DS3231_CONTROL 0x0E   ///< Control register
-#define DS3231_STATUSREG 0x0F ///< Status register
-#define DS3231_TEMPERATUREREG                                                  \
-  0x11 ///< Temperature register (high byte - low byte is at 0x12), 10-bit
-       ///< temperature value
+constexpr uint8_t DS3231_ADDRESS = 0x68;   ///< I2C address for DS3231
+constexpr uint8_t DS3231_TIME = 0x00;      ///< Time register
+constexpr uint8_t DS3231_ALARM1 = 0x07;    ///< Alarm 1 register
+constexpr uint8_t DS3231_ALARM2 = 0x0B;    ///< Alarm 2 register
+constexpr uint8_t DS3231_CONTROL = 0x0E;   ///< Control register
+constexpr uint8_t DS3231_STATUSREG = 0x0F; ///< Status register
+constexpr uint8_t DS3231_TEMPERATUREREG = 0x11; ///< Temperature register (high byte - low byte is at 0x12), 10-bit
+constexpr uint sda_pin = 16;
+constexpr uint scl_pin = 17;
+constexpr i2c_inst_t * i2c_port = i2c0;
 
 RTC_DS3231::RTC_DS3231()
 {
   address = DS3231_ADDRESS;
+  //Setup pins for I2C
+  gpio_set_function(sda_pin, GPIO_FUNC_I2C);
+  gpio_set_function(scl_pin, GPIO_FUNC_I2C);
+
+  i2c_dev = i2c_port;
+  //Initialize I2C port at 400 kHz
+  i2c_init(i2c_dev, 400 * 1000);
 }
 
 /**************************************************************************/
@@ -22,9 +32,9 @@ RTC_DS3231::RTC_DS3231()
     @return True if Wire can find DS3231 or false otherwise.
 */
 /**************************************************************************/
-void RTC_DS3231::begin(i2c_inst_t *i2c) {
+/*void RTC_DS3231::begin(i2c_inst_t *i2c) {
   i2c_dev = i2c;
-}
+}*/
 
 /**************************************************************************/
 /*!

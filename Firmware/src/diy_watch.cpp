@@ -4,6 +4,9 @@
 #include "multiplex_lcd.pio.h"
 #include "diy_watch/multiplex_lcd_drv.h"
 #include "diy_watch/RTClib.h"
+#include "diy_watch/usb_serial.h"
+#include <iostream>
+#include <stdio.h>
 
 const uint LED_PIN = PICO_DEFAULT_LED_PIN;
 const uint RTC_1HZ_PIN = 18;
@@ -13,21 +16,14 @@ const uint LCD_SM = 1; //LCD State Machine
 const uint TARGET_LCD_CYCLE_HZ = 250; //4ms per cycle, 4 cycles per refresh
 
 MultiplexLCDDriver::Ptr lcd;
-unsigned count = 0;
+unsigned seconds = 0;
+unsigned minutes = 0;
+unsigned hours = 0;
 
 void pio_irh() 
 {
   lcd->FIFOEmpty();
   pio0_hw->irq = 1;
-
-/*if (pio0_hw->irq & 1) {
-    
-
-  } else if (pio0_hw->irq & 2) {
-    pio0_hw->irq = 2;
-
-    // PIO0 IRQ1 fired
-  }*/
 }
 
 void gpio_callback(uint gpio, uint32_t events) 
@@ -36,14 +32,29 @@ void gpio_callback(uint gpio, uint32_t events)
     {
         //Increment time
         gpio_put(LED_PIN,!gpio_get(LED_PIN));
-        count++;
-        if(count > 9)
-          count = 0;
         uint8_t digits[6];
-        for(unsigned i = 0 ; i < 6 ; i++)
+        seconds++;
+        if(seconds > 59)
         {
-          digits[i] = count;
+          minutes++;
+          seconds = 0;
+          if(minutes > 59)
+          {
+            hours++;
+            minutes = 0;
+            if(hours > 24)
+            {
+              hours = 0;
+            }
+          }
         }
+        digits[0] = seconds % 10;
+        digits[1] = seconds / 10;
+        digits[2] = minutes % 10;
+        digits[3] = minutes / 10;
+        digits[4] = hours % 10;
+        digits[5] = hours / 10;
+
         lcd->UpdateOutput(digits);
     }
 }
@@ -70,30 +81,24 @@ int main()
 
     //sm_config_set_mov_status (&c, STATUS_TX_LESSTHAN , 1 )
 
-    uint8_t digits[6];
-    for(unsigned i = 0 ; i < 6 ; i++)
-    {
-      digits[i] = count;
-    }
-    lcd->UpdateOutput(digits);
-
-    //Initialize I2C port at 400 kHz
-    const uint sda_pin = 16;
-    const uint scl_pin = 17;
-    i2c_inst_t *i2c = i2c0;
-    gpio_set_function(sda_pin, GPIO_FUNC_I2C);
-    gpio_set_function(scl_pin, GPIO_FUNC_I2C);
-    i2c_init(i2c, 400 * 1000);
-
     //Enable IRQ from LCD PIO code
     irq_set_enabled(PIO0_IRQ_0, true);
     pio_sm_put(pio0,LCD_SM,0x00000000);
 
     RTC_DS3231 rtc;
-    rtc.begin(i2c);
     rtc.writeSqwPinMode(Ds3231SqwPinMode::DS3231_SquareWave1Hz);
+
+    diy_watch::USBSerial usb;
 
     while (true) 
     {
+      bool got_time_update = usb.update();
+      if(got_time_update)
+      {
+        diy_watch::Time time = usb.getTime();
+        seconds = time.seconds;
+        minutes = time.minutes;
+        hours = time.hours;
+      }
     }
 }

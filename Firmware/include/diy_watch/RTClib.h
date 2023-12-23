@@ -284,7 +284,7 @@ protected:
 class RTC_DS3231 : RTC_I2C {
 public:
   RTC_DS3231();
-  void begin(i2c_inst_t *i2c);
+  //void begin(i2c_inst_t *i2c);
   //void adjust(const DateTime &dt);
   bool lostPower(void);
   //DateTime now();
