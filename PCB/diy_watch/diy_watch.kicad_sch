@@ -2511,7 +2511,7 @@
     (property "Reference" "TP4" (at 74.168 55.88 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "TestPoint" (at 74.168 58.42 90)
+    (property "Value" "TP_Run" (at 74.168 58.42 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 77.47 55.88 0)
