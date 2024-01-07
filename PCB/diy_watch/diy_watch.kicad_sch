@@ -4002,7 +4002,7 @@
     (property "Value" "LTC4071EMS8E_PBF" (at 118.11 158.75 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Package_SO:MSOP-8-1EP_3x3mm_P0.65mm_EP1.5x1.8mm_ThermalVias" (at 76.2 146.05 0)
+    (property "Footprint" "Package_SO:MSOP-8-1EP_3x3mm_P0.65mm_EP1.5x1.8mm" (at 76.2 146.05 0)
       (effects (font (size 1.27 1.27)) (justify bottom) hide)
     )
     (property "Datasheet" "" (at 104.14 168.91 0)
