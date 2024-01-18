@@ -277,11 +277,11 @@
         )
       )
     )
-    (symbol "DIY_Watch_lib:Diptronics_FTE-3CA-V-T/R" (in_bom yes) (on_board yes)
+    (symbol "DIY_Watch_lib:FTE-2CA-V-T/R" (in_bom yes) (on_board yes)
       (property "Reference" "U" (at 0 3.81 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Value" "" (at 0 0 0)
+      (property "Value" "FTE-2CA-V-T/R" (at -1.27 6.35 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "" (at 0 0 0)
@@ -290,7 +290,7 @@
       (property "Datasheet" "" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "Diptronics_FTE-3CA-V-T/R_0_1"
+      (symbol "FTE-2CA-V-T/R_0_1"
         (circle (center -1.27 -1.27) (radius 0.1984)
           (stroke (width 0) (type default))
           (fill (type none))
@@ -314,7 +314,7 @@
         (polyline
           (pts
             (xy -1.27 -1.27)
-            (xy 1.2445 -0.9509)
+            (xy 1.27 0)
           )
           (stroke (width 0) (type default))
           (fill (type none))
@@ -340,7 +340,7 @@
           (fill (type none))
         )
       )
-      (symbol "Diptronics_FTE-3CA-V-T/R_1_1"
+      (symbol "FTE-2CA-V-T/R_1_1"
         (pin passive line (at -5.08 1.27 0) (length 2.54)
           (name "" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
@@ -2894,6 +2894,34 @@
     )
   )
 
+  (symbol (lib_id "DIY_Watch_lib:FTE-2CA-V-T/R") (at 201.93 121.92 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 076c6611-457d-47ba-88fe-6a3c5e09160c)
+    (property "Reference" "U1" (at 201.93 115.57 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "FTE-2CA-V-T/R" (at 201.93 118.11 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "DIY_Watch_lib:Diptronics FTE-3" (at 201.93 121.92 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 201.93 121.92 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 75d7c29e-dd95-4172-879d-9b0edadd7c8f))
+    (pin "2" (uuid 67a02a80-4393-4cf6-b269-faa85e8f5a6a))
+    (pin "3" (uuid 5635fc0d-e399-44ce-b263-ff91283b5cff))
+    (pin "4" (uuid 9377aa29-028d-4976-89b0-4415d39e88fa))
+    (instances
+      (project "diy_watch"
+        (path "/12c7509a-2a16-4dc7-8785-00872e5a9f11"
+          (reference "U1") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Device:C") (at 129.54 47.625 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 09677189-9138-4b4d-b51f-b63f10924d0e)
@@ -2955,34 +2983,6 @@
       (project "diy_watch"
         (path "/12c7509a-2a16-4dc7-8785-00872e5a9f11"
           (reference "#PWR035") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "DIY_Watch_lib:Diptronics_FTE-3CA-V-T/R") (at 201.93 121.92 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 0e4f725b-2e93-40ee-9ecd-ad833a4801dc)
-    (property "Reference" "U6" (at 201.93 118.11 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "~" (at 201.93 121.92 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "DIY_Watch_lib:Diptronics FTE-3" (at 201.93 121.92 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 201.93 121.92 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 241bcea0-a74c-4a09-8d05-46ab1b602c8b))
-    (pin "2" (uuid 0aa2aa0e-8133-41d5-8c13-474d45d6e000))
-    (pin "3" (uuid 7d8c0095-8284-4871-8e75-255691389ea2))
-    (pin "4" (uuid 3016d201-5c88-4fef-991d-9492bd494d7c))
-    (instances
-      (project "diy_watch"
-        (path "/12c7509a-2a16-4dc7-8785-00872e5a9f11"
-          (reference "U6") (unit 1)
         )
       )
     )

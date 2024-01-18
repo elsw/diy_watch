@@ -20,7 +20,12 @@ XC6210B332MR,U7,Package_TO_SOT_SMD:SOT-23-5,C47719,,1,https://jlcpcb.com/partdet
 Manual,,,,,,
 USB_B_Micro,J1,Connector_USB:USB_Micro-B_GCT_USB3076-30-A,,USB3076-30-A ,1,https://www.mouser.co.uk/ProductDetail/GCT/USB3076-30-A?qs=KUoIvG%2F9IlZs3NcnVJVajg%3D%3D
 LTC4071EMS8E_PBF,U8,Package_SO:MSOP-8-1EP_3x3mm_P0.65mm_EP1.5x1.8mm,,,1,https://www.mouser.co.uk/ProductDetail/Analog-Devices/LTC4071EMS8EPBF?qs=hVkxg5c3xu%2F8j8%2Fv0cfFgA%3D%3D
-~,U6,DIY_Watch_lib:Diptronics m,,,1,https://www.lcsc.com/product-detail/Microswitches_Diptronics-FTE-3CA-V-T-R_C501296.html
+~,U6,Diptronics FTE-2CA-V-T/R ,,,1,https://www.mouser.co.uk/ProductDetail/Diptronics/FTE-2CA-V-T-R?qs=MLItCLRbWszKw8bS5pOG%252Bg%3D%3D
 Battery_Cell,BT1,Battery:BatteryHolder_Multicomp_BC-2001_1x2032,,,1,
 SW_Push,SW1,Button_Switch_SMD:SW_SPST_EVQP7C,,,1,
 ~,U4,DIY_Watch_lib:6Dig7SegLCD,,,1,https://www.aliexpress.com/item/32324866141.html?spm=a2g0o.order_list.order_list_main.5.62ff1802b4BbIA
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+https://www.mouser.co.uk/ProductDetail/Diptronics/PTCF-V-T-R?qs=sGAEpiMZZMsqIr59i2oRckjEZjc1TSZQSFouPo4z2Ac%3D,,,,,,
