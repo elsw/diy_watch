@@ -3335,7 +3335,7 @@
     (property "Value" "300" (at 198.12 143.51 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "LED_SMD:LED_0402_1005Metric" (at 193.802 142.24 90)
+    (property "Footprint" "Resistor_SMD:R_0402_1005Metric" (at 193.802 142.24 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 195.58 142.24 0)

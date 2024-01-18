@@ -24,6 +24,6 @@ fp-info-cache
 *.dsn
 *.ses
 
-# Exported BOM files
+# Exported files
 *.xml
-*.csv
+PCB/diy_watch/export

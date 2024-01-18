@@ -1,0 +1,26 @@
+Value,Reference,Footprint,JLCPCB Part,Part external,Qty,Link
+,,,,,,
+Placed,,,,,,
+1uF,"C1, C4, C5, C6, C7, C8, C9",Capacitor_SMD:C_0402_1005Metric,C52923,,7,https://jlcpcb.com/partdetail/53938-CL05A105KA5NQNC/C52923
+20pF,"C2, C3",Capacitor_SMD:C_0402_1005Metric,C1554,,2,https://jlcpcb.com/partdetail/1906-0402CG200J500NT/C1554
+1uf,C11,Capacitor_SMD:C_0402_1005Metric,C52923,,1,https://jlcpcb.com/partdetail/53938-CL05A105KA5NQNC/C52923
+LED,"D1, D2, D3",LED_SMD:LED_0805_2012Metric,C2296,,3,https://jlcpcb.com/partdetail/Hubei_KentoElec-KT0805Y/C2296
+W25Q16JVUXIQ,IC1,DIY_Watch_lib:SON50P300X200X60-9N,C2843335,,1,https://jlcpcb.com/partdetail/WinbondElec-W25Q16JVUXIQ/C2843335
+1k,R1,Resistor_SMD:R_0402_1005Metric,C11702,,1,https://jlcpcb.com/partdetail/12256-0402WGF1001TCE/C11702
+5K,"R3, R4, R5, R6, R7, R8, R9, R10",Resistor_SMD:R_0402_1005Metric,C25900,,8,https://jlcpcb.com/partdetail/26643-0402WGF4701TCE/C25900
+100K,R11,Resistor_SMD:R_0402_1005Metric,C25741,,1,https://jlcpcb.com/partdetail/26484-0402WGF1003TCE/C25741
+300,"R12, R13, R14",Resistor_SMD:R_0402_1005Metric,C25104,,3,https://jlcpcb.com/partdetail/25847-0402WGF3300TCE/C25104
+162,R16,Resistor_SMD:R_0402_1005Metric,C25091,,1,https://jlcpcb.com/parts/2nd/Resistors/Chip_Resistor_Surface_Mount_4?searchTxt=0402
+DS3231MZ,U2,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,C107410,,1,https://jlcpcb.com/partdetail/108629-DS3231MZTRL/C107410
+RP2040,U3,Package_DFN_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm,C2040,,1,https://jlcpcb.com/partdetail/RaspberryPi-RP2040/C2040
+XC6210B332MR,U7,Package_TO_SOT_SMD:SOT-23-5,C47719,,1,https://jlcpcb.com/partdetail/TorexSemicon-XC6210B332MRG/C47719
+12MHz_crystal,Y1,Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm,C9002,,1,https://jlcpcb.com/partdetail/Yxc-X322512MSB4SI/C9002
+,,,,,,
+,,,,,,
+Manual,,,,,,
+USB_B_Micro,J1,Connector_USB:USB_Micro-B_GCT_USB3076-30-A,,USB3076-30-A ,1,https://www.mouser.co.uk/ProductDetail/GCT/USB3076-30-A?qs=KUoIvG%2F9IlZs3NcnVJVajg%3D%3D
+LTC4071EMS8E_PBF,U8,Package_SO:MSOP-8-1EP_3x3mm_P0.65mm_EP1.5x1.8mm,,,1,https://www.mouser.co.uk/ProductDetail/Analog-Devices/LTC4071EMS8EPBF?qs=hVkxg5c3xu%2F8j8%2Fv0cfFgA%3D%3D
+~,U6,DIY_Watch_lib:Diptronics m,,,1,https://www.lcsc.com/product-detail/Microswitches_Diptronics-FTE-3CA-V-T-R_C501296.html
+Battery_Cell,BT1,Battery:BatteryHolder_Multicomp_BC-2001_1x2032,,,1,
+SW_Push,SW1,Button_Switch_SMD:SW_SPST_EVQP7C,,,1,
+~,U4,DIY_Watch_lib:6Dig7SegLCD,,,1,https://www.aliexpress.com/item/32324866141.html?spm=a2g0o.order_list.order_list_main.5.62ff1802b4BbIA
