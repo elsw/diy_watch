@@ -2,6 +2,15 @@
 
 This is a project to create a homecrew binary watch to fit inside a analogue wrist watch
 
+## TODO
+
+- SDA Pullup
+- SCL Pullup
+- RTC_INT Pullup
+- Move 3V3 reg input from BATT to Vcc
+- More space for micro USB
+- Push button fit?
+
 ## Components
 ```
 Raspberry Pi RP2040 Microchip
