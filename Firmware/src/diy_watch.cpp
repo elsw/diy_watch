@@ -73,6 +73,8 @@ int main()
     //Initialise driver
     lcd = std::make_shared<MultiplexLCDDriver>(pio,LCD_SM,offset,LCD_BASE_PIN,TARGET_LCD_CYCLE_HZ);
 
+    gpio_init(RTC_1HZ_PIN);
+    gpio_set_dir(RTC_1HZ_PIN, GPIO_IN);
     gpio_set_irq_enabled_with_callback(RTC_1HZ_PIN, GPIO_IRQ_EDGE_RISE, true, &gpio_callback);
 
     // Enable IRQ0 on PIO0
@@ -88,6 +90,10 @@ int main()
     RTC_DS3231 rtc;
     rtc.writeSqwPinMode(Ds3231SqwPinMode::DS3231_SquareWave1Hz);
 
+    //check the setting has taken
+    Ds3231SqwPinMode mode = rtc.readSqwPinMode();
+    std::cout << "DIY Watch v " << static_cast<int>(mode) << std::endl;
+
     diy_watch::USBSerial usb;
 
     while (true) 
@@ -100,5 +106,8 @@ int main()
         minutes = time.minutes;
         hours = time.hours;
       }
+
+      //sleep_ms(1000);
+      //gpio_callback(RTC_1HZ_PIN, 0) ;
     }
 }

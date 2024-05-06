@@ -165,4 +165,8 @@ Hitting
 OpenOCD: GDB Server Quit Unexpectedly, cannot find device, WSL limitation?
 ```
 
+## Debugger wiring
+
+
+
 ## References
