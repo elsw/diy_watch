@@ -946,6 +946,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part" "C11702 "
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1540f3c5-5d62-4f74-9f29-4c3ad74f5d3a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/f7fe93e1-5fc3-46b8-9ece-651f29080c83")
 		(sheetname "Root")
@@ -1610,6 +1623,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part" "C25900"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a19d35dd-9549-41f7-b93a-f35f20bc385f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/aeb4984b-dfb0-4764-aa7e-cde8a9f0af7b")
 		(sheetname "Root")
@@ -1822,6 +1848,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part" "C25091"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7918f9a5-b366-45fe-89e0-ebe742e99a31")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/4514112b-6131-44d6-82fa-f9e9659cb05a")
 		(sheetname "Root")
@@ -2030,6 +2069,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part" "C2296"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8747716b-30ca-49e5-90ee-90969506d2f8")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -2268,6 +2320,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part" "C25900"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "edd070d3-325c-4a47-937e-f095b54b9d8e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/61917afd-65de-4234-bde7-88d791911a3f")
 		(sheetname "Root")
@@ -2476,6 +2541,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part" "C47719"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d882a87d-cede-48b3-ba0a-07a8be8e5553")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -2762,6 +2840,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part" "C25900"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ffa07847-22e2-4e07-a5ab-f2ad690f57b2")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -3202,6 +3293,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part" "C25104"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "22495ce5-0e2b-411e-a805-b3a3b1181b8d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/3fd63f1f-1a85-4e1b-9041-92d3a10ec311")
 		(sheetname "Root")
@@ -3415,6 +3519,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part" "C25744"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e8a772b7-5922-470a-87c6-bd494c4944da")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/d7077714-f4a4-4cc3-8e05-e2eb72bd1fad")
 		(sheetname "Root")
@@ -3624,6 +3741,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part" "C25100"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d297dd0a-3ea0-45db-b613-3eac2bac02e4")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -4066,6 +4196,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part" "C25900"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "98cfc653-e060-4665-8184-67a1c25ff6ac")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/5aff144a-ad25-44c5-a132-51d9cf93d7d1")
 		(sheetname "Root")
@@ -4275,6 +4418,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part" "C25100"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c6ee1931-96f3-425d-95b1-94274b19af1d")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -4717,6 +4873,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part" "C25900"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "be86dfab-83bf-4012-8f62-bc8611574736")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/9cec66d2-fc70-4f53-bd03-40471dc1b0c2")
 		(sheetname "Root")
@@ -4929,6 +5098,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part" "C25900"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0e006c6a-61d4-49d1-ac41-2324810ce44c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/bdba0bb2-cae7-4050-b3a2-2b0f0dea65b1")
 		(sheetname "Root")
@@ -5137,6 +5319,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part" "C2040 "
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0927c97f-fe61-4c72-820b-4e8974225c1e")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -6490,6 +6685,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part" "C25900"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d911f26b-fdc1-429b-94b1-0233a2058775")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/ace0b2d0-9584-4c64-96ae-8f86f7b2af2d")
 		(sheetname "Root")
@@ -6924,6 +7132,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part" "C25104"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "da55e495-b159-480e-8e27-863eb04b6751")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -7828,6 +8049,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part" "C107410"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "38ba8a65-dd5e-4664-89b1-3749ae54cb21")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "SOIC*3.9x4.9mm*P1.27mm*")
 		(path "/f4478c26-a3da-4367-9a7b-30d5598ec592")
 		(sheetname "Root")
@@ -8370,6 +8604,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part" "C25744"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9c2be5c0-eae7-4d9f-8364-3c9c6917dfb5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/cd68820a-9db7-484c-a40e-bc18613a90b3")
 		(sheetname "Root")
@@ -8825,6 +9072,19 @@
 				)
 			)
 		)
+		(property "JLCPCB Part" "C25744"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "918b5b8e-25c7-4952-858b-c3be6711c43d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/f4bb3144-7b82-4c08-ba78-f8fad8f30ca2")
 		(sheetname "Root")
@@ -9033,6 +9293,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part" "C2296"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7f11e834-887c-40b5-85ab-613639ec6b6c")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -9493,6 +9766,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "JLCPCB Part" "C25900"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a105b4d8-c766-43dd-8113-20f4bcf3f71b")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -10873,7 +11159,7 @@
 		(property "Reference" "JP1"
 			(at 0 1.8 0)
 			(layer "B.SilkS")
-			(uuid "b2229575-6422-47f6-867f-da0f5cc9363e")
+			(uuid "b745346f-eb27-43be-9ed0-de5b73759084")
 			(effects
 				(font
 					(size 1 1)
@@ -10885,7 +11171,7 @@
 		(property "Value" "SolderJumper_3_Bridged12"
 			(at 0 -1.9 0)
 			(layer "B.Fab")
-			(uuid "6c54b170-963e-4e83-9d7a-2d6ef5b59b9d")
+			(uuid "979d4987-d49a-48fe-9f86-583d74cc3daa")
 			(effects
 				(font
 					(size 1 1)
@@ -10899,7 +11185,7 @@
 			(unlocked yes)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "02636715-9e01-488e-8cde-4d734396a7b4")
+			(uuid "3e35c27e-0423-44ed-a401-c146b885c3e0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10913,7 +11199,7 @@
 			(unlocked yes)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "820adefe-d85c-412c-9796-18966edf311a")
+			(uuid "e04b3a68-ccc0-4243-8983-c63d58c8cbb4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10927,7 +11213,7 @@
 			(unlocked yes)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "3e69c54b-54bf-4eae-9fbd-922359906acf")
+			(uuid "b72646a7-5361-422b-91ea-b22a821e49f9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10953,7 +11239,7 @@
 			)
 			(fill solid)
 			(layer "B.Cu")
-			(uuid "46828469-8e8f-4baa-80c9-5a411c4bb2bc")
+			(uuid "b02981f1-0f1a-48b6-ae32-6f2fea3e4bb0")
 		)
 		(fp_line
 			(start 2.05 -0.3)
@@ -10963,7 +11249,7 @@
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "179a3f86-d004-4c7c-b79f-f6081a35a31e")
+			(uuid "71e81956-c8ca-41ae-acc5-701c61220731")
 		)
 		(fp_line
 			(start 1.4 1)
@@ -10973,7 +11259,7 @@
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "9d7c5b97-93aa-4753-8079-2946fc02d949")
+			(uuid "d452a52c-807e-472a-95b4-6310cc8b1f0f")
 		)
 		(fp_line
 			(start -0.9 -1.5)
@@ -10983,7 +11269,7 @@
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "cd5dc018-faaa-45d7-afee-c0507185eba4")
+			(uuid "5405b198-f6af-49db-9148-721777f3f098")
 		)
 		(fp_line
 			(start -0.9 -1.5)
@@ -10993,7 +11279,7 @@
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "1e48b823-633b-432b-9bcc-37f98e6e2551")
+			(uuid "25cd2fb8-2cfd-440a-96a9-3599adadfed1")
 		)
 		(fp_line
 			(start -1.4 -1)
@@ -11003,7 +11289,7 @@
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "8cc47bb1-61bb-4f3b-8307-f735cf230f66")
+			(uuid "eb22299a-2956-4b82-8b2b-cfaebbd140b0")
 		)
 		(fp_line
 			(start -1.5 -1.5)
@@ -11013,7 +11299,7 @@
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "7a6f69d8-4167-4c48-8da7-7c8ba10d3a72")
+			(uuid "ae47e7e6-7884-4595-8526-5f924de481a3")
 		)
 		(fp_line
 			(start -2.05 0.3)
@@ -11023,7 +11309,7 @@
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "475de86c-49d9-4f13-8f82-3e554ccad63b")
+			(uuid "dda8e3cc-07a3-4a3a-bcaf-d25f16625913")
 		)
 		(fp_arc
 			(start 2.05 0.3)
@@ -11034,7 +11320,7 @@
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "f96d0836-dad4-4ffa-b7bd-dd1d24670d62")
+			(uuid "c9b193c8-555d-44ed-880c-fd9b98dd9613")
 		)
 		(fp_arc
 			(start 1.35 -1)
@@ -11045,7 +11331,7 @@
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "bfdcc886-ac4c-4586-9744-fce62d2f6809")
+			(uuid "d765c37c-4f09-428f-bbbb-cab24405d1a7")
 		)
 		(fp_arc
 			(start -1.35 1)
@@ -11056,7 +11342,7 @@
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "dc1a6b7d-62c4-41b0-a6cc-3d9a31ec8733")
+			(uuid "cb105578-cb65-411d-851e-3ec4c6e0be23")
 		)
 		(fp_arc
 			(start -2.05 -0.3)
@@ -11067,7 +11353,7 @@
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "77483622-25e5-4f72-9409-94beee71b1cc")
+			(uuid "18813fcc-89af-4e04-aa3f-6864492ab879")
 		)
 		(fp_line
 			(start 2.3 1.25)
@@ -11077,7 +11363,7 @@
 				(type solid)
 			)
 			(layer "B.CrtYd")
-			(uuid "e9a3f903-4f2b-4cc2-b30f-ee63fafdb1b6")
+			(uuid "aeef1a43-06dd-4593-85e0-fd6957296cf0")
 		)
 		(fp_line
 			(start 2.3 1.25)
@@ -11087,7 +11373,7 @@
 				(type solid)
 			)
 			(layer "B.CrtYd")
-			(uuid "826c4700-7a1d-421b-b711-326b60f0abd8")
+			(uuid "76f9597e-e272-4473-a2d4-900f28da79f6")
 		)
 		(fp_line
 			(start -2.3 -1.25)
@@ -11097,7 +11383,7 @@
 				(type solid)
 			)
 			(layer "B.CrtYd")
-			(uuid "10f41818-05ca-4901-b94d-f2e3cef26d9f")
+			(uuid "aeff7b5c-777c-4288-aff6-356a297d508c")
 		)
 		(fp_line
 			(start -2.3 -1.25)
@@ -11107,7 +11393,7 @@
 				(type solid)
 			)
 			(layer "B.CrtYd")
-			(uuid "67347b2e-e36e-4344-83d1-8333dfea22ef")
+			(uuid "d5d7a7aa-fc86-49d1-9758-a22146c1e791")
 		)
 		(pad "1" smd custom
 			(at -1.3 0 180)
@@ -11143,7 +11429,7 @@
 					(fill yes)
 				)
 			)
-			(uuid "d6be9720-13b7-466f-a744-2f5f6e087583")
+			(uuid "b95f36dd-66ef-407c-a96a-cfc774726ab9")
 		)
 		(pad "2" smd rect
 			(at 0 0 180)
@@ -11152,7 +11438,7 @@
 			(net 59 "Net-(JP1-C)")
 			(pinfunction "C")
 			(pintype "passive")
-			(uuid "d54e2e05-1431-4ddc-979f-0e0c383992ec")
+			(uuid "5e2c0b8f-b76d-4d30-a046-620d600de2ab")
 		)
 		(pad "3" smd custom
 			(at 1.3 0 180)
@@ -11188,7 +11474,7 @@
 					(fill yes)
 				)
 			)
-			(uuid "9c3be69d-3db6-448b-808c-5df042964a35")
+			(uuid "713886a5-a299-4b41-b07b-feedaec54016")
 		)
 	)
 	(footprint "Button_Switch_SMD:SW_SPST_EVQP7C"
@@ -24088,22 +24374,22 @@
 				(xy 158.221718 108.982718) (xy 158.125463 109.10816) (xy 158.064956 109.254237) (xy 158.064955 109.254239)
 				(xy 158.054443 109.334092) (xy 158.026176 109.397989) (xy 157.967852 109.43646) (xy 157.897987 109.437291)
 				(xy 157.843823 109.405588) (xy 156.950416 108.512181) (xy 156.916931 108.450858) (xy 156.921915 108.381166)
-				(xy 156.963787 108.325233) (xy 157.029251 108.300816) (xy 157.038097 108.3005) (xy 157.824331 108.3005)
-				(xy 157.824347 108.300501) (xy 157.831943 108.300501) (xy 157.990054 108.300501) (xy 157.990057 108.300501)
-				(xy 158.142785 108.259577) (xy 158.217039 108.216706) (xy 158.279716 108.18052) (xy 158.39152 108.068716)
-				(xy 158.48052 107.979716) (xy 158.538825 107.878728) (xy 158.559577 107.842785) (xy 158.600501 107.690057)
-				(xy 158.600501 107.531943) (xy 158.600501 107.524348) (xy 158.6005 107.52433) (xy 158.6005 107.136097)
-				(xy 158.620185 107.069058) (xy 158.636819 107.048416) (xy 158.687417 106.997818) (xy 158.74874 106.964333)
-				(xy 158.775098 106.961499) (xy 158.889363 106.961499) (xy 159.006753 106.946046) (xy 159.006757 106.946044)
-				(xy 159.006762 106.946044) (xy 159.152841 106.885536) (xy 159.278282 106.789282) (xy 159.301625 106.75886)
-				(xy 159.358051 106.717658) (xy 159.427797 106.713503) (xy 159.488718 106.747714) (xy 159.498368 106.758851)
-				(xy 159.521718 106.789282) (xy 159.647159 106.885536) (xy 159.793238 106.946044) (xy 159.910639 106.9615)
-				(xy 160.18936 106.961499) (xy 160.189361 106.961499) (xy 160.201594 106.959888) (xy 160.306762 106.946044)
-				(xy 160.327545 106.937434) (xy 160.397014 106.929965) (xy 160.422453 106.937434) (xy 160.443238 106.946044)
-				(xy 160.560639 106.9615) (xy 160.83936 106.961499) (xy 160.839363 106.961499) (xy 160.956753 106.946046)
-				(xy 160.956757 106.946044) (xy 160.956762 106.946044) (xy 161.102841 106.885536) (xy 161.228282 106.789282)
-				(xy 161.324536 106.663841) (xy 161.385044 106.517762) (xy 161.389776 106.481814) (xy 161.418042 106.417919)
-				(xy 161.476366 106.379447) (xy 161.512715 106.374) (xy 162.077403 106.374)
+				(xy 156.963787 108.325233) (xy 157.029251 108.300816) (xy 157.038097 108.3005) (xy 157.079057 108.3005)
+				(xy 157.824331 108.3005) (xy 157.824347 108.300501) (xy 157.831943 108.300501) (xy 157.990054 108.300501)
+				(xy 157.990057 108.300501) (xy 158.142785 108.259577) (xy 158.217039 108.216706) (xy 158.279716 108.18052)
+				(xy 158.39152 108.068716) (xy 158.48052 107.979716) (xy 158.538825 107.878728) (xy 158.559577 107.842785)
+				(xy 158.600501 107.690057) (xy 158.600501 107.531943) (xy 158.600501 107.524348) (xy 158.6005 107.52433)
+				(xy 158.6005 107.136097) (xy 158.620185 107.069058) (xy 158.636819 107.048416) (xy 158.687417 106.997818)
+				(xy 158.74874 106.964333) (xy 158.775098 106.961499) (xy 158.889363 106.961499) (xy 159.006753 106.946046)
+				(xy 159.006757 106.946044) (xy 159.006762 106.946044) (xy 159.152841 106.885536) (xy 159.278282 106.789282)
+				(xy 159.301625 106.75886) (xy 159.358051 106.717658) (xy 159.427797 106.713503) (xy 159.488718 106.747714)
+				(xy 159.498368 106.758851) (xy 159.521718 106.789282) (xy 159.647159 106.885536) (xy 159.793238 106.946044)
+				(xy 159.910639 106.9615) (xy 160.18936 106.961499) (xy 160.189361 106.961499) (xy 160.201594 106.959888)
+				(xy 160.306762 106.946044) (xy 160.327545 106.937434) (xy 160.397014 106.929965) (xy 160.422453 106.937434)
+				(xy 160.443238 106.946044) (xy 160.560639 106.9615) (xy 160.83936 106.961499) (xy 160.839363 106.961499)
+				(xy 160.956753 106.946046) (xy 160.956757 106.946044) (xy 160.956762 106.946044) (xy 161.102841 106.885536)
+				(xy 161.228282 106.789282) (xy 161.324536 106.663841) (xy 161.385044 106.517762) (xy 161.389776 106.481814)
+				(xy 161.418042 106.417919) (xy 161.476366 106.379447) (xy 161.512715 106.374) (xy 162.077403 106.374)
 			)
 		)
 		(filled_polygon
