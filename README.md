@@ -2,11 +2,10 @@
 
 This is a project to create a homecrew binary watch to fit inside a analogue wrist watch
 
-## TODO
+## issues
 
-- More space for micro USB
-- Push button fit?
-- LED current draw?
+- No Vcc out of the LTC4071 chip, swapped LBSEL to set the `Low Battery Connect` to 3.6V but never get any voltage out
+- Cannot debug RP2040 code, got it working once but not again, I think it's something up with the cdoe itself, debugging reliable on other code
 
 ## Components
 ```
