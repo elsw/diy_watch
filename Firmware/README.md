@@ -8,50 +8,23 @@ This is the firmware for the DIY watch to run the raspberry pi RP2040 microcontr
 [Raspberry Pi Pico C/C++ SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf)
 [Driving multiplexed LCD directly](https://ww1.microchip.com/downloads/en/Appnotes/doc8103.pdf)
 
-
 # Windows Setup
 
 Install VS code and install the pico extension. Import this folder using the pico import tool.
 
+I've had issues with linux, for pico 1 seems like windwso is easier, for pico2 linux might be fine
+
 ## Debugging
 
-Grab a pre-compiled picoprobe binary.. TODO find source.
+Grab a pre-compiled `debugprobe_on_pico.uf2` binary from [debug probe git](https://github.com/raspberrypi/debugprobe/releases)
 
-Hold down BOOTSEL, connect your pico and drag and drop the picoprobe.
-
-If you have the right version it should appear as a CMIS_DAP device
+Hold down BOOTSEL, connect your pico and drag and drop the binary.
 
 The the USB drivers you may need to download [zadig](https://zadig.akeo.ie/)
 
+If you have the right version it should appear as a CMIS_DAP device
+
 Select `Picoprobe (interface 2)` and set the USB driver to `WinUSB`
+
+At time of writing I am using pico SDK version `v2.2.0` and pico debug probe `v2.2.3`
  
-### Debugging with VSCode
-
-Is this required?
-```
-sudo apt update
-sudo apt install binutils-multiarch
-cd /usr/bin
-ln -s /usr/bin/objdump objdump-multiarch
-ln -s /usr/bin/nm nm-multiarch 
-```
-
-Does it need in the launch?
-```
-"openOCDLaunchCommands": [
-                "adapter speed 5000"
-            ],
-```
-
-The debugging setup is configured in the .vscode/launch.json file.
-
-Hitting
-```
-OpenOCD: GDB Server Quit Unexpectedly, cannot find device, WSL limitation?
-```
-
-## Debugger wiring
-
-
-
-## References
