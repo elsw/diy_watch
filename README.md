@@ -9,17 +9,20 @@ This is a project to create a homecrew binary watch to fit inside a analogue wri
 
 ## TODO
 
-- BUY https://thepihut.com/products/adafruit-usb-liion-lipoly-charger (check still in stock for JLC)
+- Swap battery charger for MCP73833
 - Recreate breadboard setup, test in rust
-- Check fit with exsisting PCB
-- Change PCB to 4 layer, swap bootsel for pure smd option or remove switch completely? check it this frees enough space for MCP73833
-- Find connector I could solder to the back for SWD
+- Change PCB to 4 layer
+- Change programming port for 3 pin JST SH (pico probe standard)
+- Romove bool sel switch in favour of solder pads
+- Swap LIR battery with space for lipo
+- Add charging state LED
 
 ## Components
 ```
 Cheap 6 digit LCD display
 Raspberry Pi RP2040 Microchip
-LIR2032 40mAH button Battery
+150mah lipo - https://thepihut.com/products/150mah-3-7v-lipo-battery
 DS3231 real time clock
-charging chip TODO
+charging chip (breakout https://www.adafruit.com/product/259)
+Standarise programming port on pico probe wire (1mm JST-SH, SM03B-SRSS-TB)
 ```
