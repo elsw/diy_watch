@@ -2,6 +2,18 @@
 
 This is the firmware for the DIY watch to run the raspberry pi RP2040 microcontroller
 
+## Installation
+
+Install rust: `curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh`
+
+Install rs-probe: `curl -LsSf https://github.com/probe-rs/probe-rs/releases/latest/download/probe-rs-tools-installer.sh | sh`
+
+## Programming Setup
+
+VSCode with extensions:
+ - rust-analyser
+ - rs-probe
+
 ## References
 
 [RP2040 Datasheet](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf)
