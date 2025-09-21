@@ -58,9 +58,11 @@ Info on setting up
 https://probe.rs/docs/tools/debugger/
 
 ## References
-
+[Rust Programming Book](https://doc.rust-lang.org/book/)
+[Rust for embedded book](https://docs.rust-embedded.org/book/)
 [embassy](https://github.com/embassy-rs/embassy)
 [probe-rs](https://probe.rs/docs/)
+[RP2040 Template](https://github.com/bentwire/embassy-rp2040-template)
 [RP2040 Datasheet](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf)ro    
 [Raspberry Pi Pico C/C++ SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf)
 [Driving multiplexed LCD directly](https://ww1.microchip.com/downloads/en/Appnotes/doc8103.pdf)
