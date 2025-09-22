@@ -10,7 +10,7 @@
             "request": "launch",
             "name": "probe-rs Test",
             "cwd": "${workspaceFolder}",
-            "connectUnderReset": true,
+            "connectUnderReset": false,
             "chip": "RP2040",
             "flashingConfig": {
                 "flashingEnabled": true,
@@ -19,7 +19,7 @@
             "coreConfigs": [
                 {
                     "coreIndex": 0,
-                    "programBinary": "./target/thumbv7em-none-eabihf/debug/${workspaceFolderBasename}"
+                    "programBinary": "./target/thumbv6m-none-eabi/debug/${workspaceFolderBasename}"
                 }
             ]
         }

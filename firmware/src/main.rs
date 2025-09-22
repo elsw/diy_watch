@@ -1,9 +1,10 @@
 //! This example test the RP Pico on board LED.
 //!
 //! It does not work with the RP Pico W board. See wifi_blinky.rs.
-
 #![no_std]
 #![no_main]
+
+mod multiplex_lcd;
 
 use defmt::*;
 use embassy_executor::Spawner;
