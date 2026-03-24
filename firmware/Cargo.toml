@@ -60,6 +60,9 @@ log = "0.4"
 rand = { version = "0.9.0", default-features = false }
 embedded-sdmmc = "0.7.0"
 
+# Codebase Dependencies
+ds3231 = "0.3.0"
+
 [profile.release]
 # Enable generation of debug symbols even on release builds
 debug = true
