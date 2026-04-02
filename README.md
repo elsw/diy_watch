@@ -9,13 +9,14 @@ This is a project to create a homecrew binary watch to fit inside a analogue wri
 
 ## TODO
 
-- Swap battery charger for MCP73833
+- Swap battery charger for MCP73833 (C340160)
 - Recreate breadboard setup, test in rust
 - Change PCB to 4 layer
 - Change programming port for 3 pin JST SH (pico probe standard)
 - Romove bool sel switch in favour of solder pads
 - Swap LIR battery with space for lipo
 - Add charging state LED
+- Swap RTC for PCF-8563 (C2651526)
 
 ## Components
 ```
